@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>旅游攻略chen.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>81BFA4754CC4289C583291E10258EB200B1A99D4</string>
+				<key>dateExpires</key>
+				<string>2019/3/1</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>Q6F5GPUR85.com.zhiyan.chen.splvyou</string>
+				<key>aps-environment</key>
+				<string>production</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>Q6F5GPUR85</string>
+				<key>get-task-allow</key>
+				<false/>
+			</dict>
+			<key>name</key>
+			<string>旅游攻略chen.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>39c9cf58-ead1-4024-8356-a6f8c492a570</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: com.zhiyan.chen.splvyou</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>Q6F5GPUR85</string>
+				<key>name</key>
+				<string>chen zhiyan</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
