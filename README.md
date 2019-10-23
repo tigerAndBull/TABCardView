@@ -49,9 +49,3 @@ self.cardView.delegate = self;
 >1. 卡片组是一个view
 >2. 卡片组由多个TABBaseCardView组成，你可以继承TABBaseCardView，定制自己的卡片内容，不只是一张图
 >3. 代理目前的作用是：告诉你当前是哪个卡片
-
-## 最后
->1. github地址（有demo）：https://github.com/tigerAndBull/TABCardView
->2. 欢迎评论交流，后续有新的需求，会继续改进！
->3. 自推 -> 原生骨架屏地址：https://www.jianshu.com/p/6a0ca4995dff
->4. 私人wx：awh199833
