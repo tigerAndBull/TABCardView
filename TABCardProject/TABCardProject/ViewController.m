@@ -27,8 +27,7 @@
     
     self.view.backgroundColor = kBackColor;
     
-    self.cardView = [[TABCardView alloc] initWithFrame:CGRectMake(40, (kScreenHeight - 320)/2, kScreenWidth - 120, 320)
-                                       showCardsNumber:4];
+    self.cardView = [[TABCardView alloc] initWithFrame:CGRectMake(40, (kScreenHeight - 320)/2, kScreenWidth - 120, 320) showCardsNumber:4];
     self.cardView.isShowNoDataView = YES;
     self.cardView.noDataView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"占位图"]];
     self.cardView.delegate = self;

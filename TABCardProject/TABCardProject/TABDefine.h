@@ -9,8 +9,6 @@
 #ifndef TABDefine_h
 #define TABDefine_h
 
-#define kAPPDELEGATE ((AppDelegate *)[UIApplication sharedApplication].delegate)
-
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define tabbarSize (self.hidesBottomBarWhenPushed ? CGSizeZero : self.navigationController.tabBarController.tabBar.frame.size)
@@ -39,21 +37,5 @@
 #define kNavigationColor ([UIColor colorWithRed:139/255.0 green:221/255.0 blue:94/255.0 alpha:1])
 #define kHeight(x) ((kScreenHeight/812.0)*x)
 #define kWidth(x) ((kScreenWidth/375.0)*x)
-
-#define BLOCK_EXEC(block, ...) if (block) { block(__VA_ARGS__); };
-
-#define SuppressPerformSelectorLeakWarning(Stuff) \
-do { \
-_Pragma("clang diagnostic push") \
-_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
-Stuff; \
-_Pragma("clang diagnostic pop") \
-} while (0)
-
-#pragma mark - 本项目中
-
-#define bannerHeight (isIPad?90:50)
-#define bannerWidth (isIPad?728:320)
-#define MASKANIMATIONFROMLEFT @"maskAnimationFromLeft"
 
 #endif /* TABDefine_h */

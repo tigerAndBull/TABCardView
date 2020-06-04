@@ -9,38 +9,38 @@
 #import "TABBaseCardView.h"
 #import "TABCardView.h"
 
-#import "TABDefine.h"
+static NSString * kCardViewNoDataString = @"kCardViewNoDataString";
 
-static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
+#define kCardViewScreenHeight [UIScreen mainScreen].bounds.size.height
 
-@interface TABCardView (){
-    
-    __strong TABBaseCardView * tempView;
-    float sizePercent;                                                  // 顶部卡片拖动中，底部卡片缩放系数
+@interface TABCardView () {
+    __weak TABBaseCardView *currentShowingView;
 }
 
-@property (nonatomic,strong,readonly) NSMutableArray * alphaArray;      // 可视卡片透明度数组
-@property (nonatomic,strong) UIPanGestureRecognizer  * cardPan;
-
-@property (nonatomic) NSInteger  showCardsNumber;                       // 展示的卡片数
-@property (nonatomic) NSInteger  currentIndex;                          // 当前index
+// 可视卡片透明度数组
+@property (nonatomic, strong, readonly) NSMutableArray * alphaArray;
+// 卡片手势
+@property (nonatomic, strong) UIPanGestureRecognizer  * cardPan;
+// 展示的卡片数
+@property (nonatomic) NSInteger  showCardsNumber;
+// 当前index
+@property (nonatomic) NSInteger  currentIndex;
 @property (nonatomic) CGPoint    oldCenter;
-
-@property (nonatomic) NSInteger  cardCount;                             // 卡片总量
+// 卡片总量
+@property (nonatomic) NSInteger  cardCount;
+// 顶部卡片拖动中，底部卡片缩放系数
+@property (nonatomic) CGFloat sizePercent;
 
 @end
 
 @implementation TABCardView
 
-- (instancetype)initWithFrame:(CGRect)frame
-              showCardsNumber:(NSInteger)showCardsNumber {
-    
+- (instancetype)initWithFrame:(CGRect)frame showCardsNumber:(NSInteger)showCardsNumber {
     if (self = [super initWithFrame:frame]) {
         self.userInteractionEnabled = YES;
         self.backgroundColor = [UIColor clearColor];
-        
-        sizePercent = 0.05;
         self.showCardsNumber = showCardsNumber;
+        _sizePercent = 0.05;
     }
     return self;
 }
@@ -79,7 +79,6 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
     if (pan.state == UIGestureRecognizerStateEnded) {
 
         // 移除拖动视图逻辑
-        
         // 加速度 小于 1100points/second
         if (sqrt(pow(velocity.x, 2) + pow(velocity.y, 2)) < 1100.0) {
             
@@ -90,7 +89,7 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
                 [UIView animateWithDuration:0.6 animations:^{
                     UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
                     CGRect rect = [cardView convertRect:cardView.bounds toView:window];
-                    cardView.center = CGPointMake(cardView.center.x, cardView.center.y+(kScreenHeight-rect.origin.y+50));
+                    cardView.center = CGPointMake(cardView.center.x, cardView.center.y+(kCardViewScreenHeight-rect.origin.y+50));
                 }];
                 [self animationBlowViewWithXOffPercent:1];
                 [self performSelector:@selector(cardRemove:) withObject:cardView afterDelay:0.5];
@@ -138,21 +137,22 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
 - (void)loadCardViewWithData:(NSMutableArray<TABBaseCardView *> *)cards {
     
     if (nil == cards) {
-        NSLog(@"卡片数据源为nil");
         return;
     }
     
     if (self.showCardsNumber == 0) {
-        NSLog(@"未设置显示卡片数，将使用默认值：4");
         self.showCardsNumber = 4;
     }
     
+    if (self.showCardsNumber >= cards.count) {
+        self.showCardsNumber = cards.count-1;
+    }
+    
     if (cards) {
-        NSLog(@"重新设置数据源，移除旧视图");
         if (self.subviews.count > 0) {
             for (UIView *subV in self.subviews) {
                 if ([subV isKindOfClass:[TABBaseCardView class]] ||
-                    [subV.layer.name isEqualToString:tabCardNoDataString]) {
+                    [subV.layer.name isEqualToString:kCardViewNoDataString]) {
                     [subV removeFromSuperview];
                 }
             }
@@ -168,11 +168,10 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
         // 位置偏移
         cardView.center = CGPointMake(self.center.x + self.offsetX*(self.cardCount-1-i) - self.frame.origin.x, self.center.y + self.offsetY*(self.cardCount-1-i) - self.frame.origin.y);
         // 缩放效果
-        cardView.transform = CGAffineTransformMakeScale(1-sizePercent*(self.cardCount-i-1), 1-sizePercent*(self.cardCount-i-1));
+        cardView.transform = CGAffineTransformMakeScale(1-_sizePercent*(self.cardCount-i-1), 1-_sizePercent*(self.cardCount-i-1));
         cardView.layer.cornerRadius = self.cardCornerRadius;
         cardView.layer.masksToBounds = YES;
         cardView.backgroundColor = [UIColor clearColor];
-        NSLog(@"%lf",cardView.frame.size.width);
     }
     
     [self addCardViewsToShow];
@@ -187,23 +186,23 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
         
         TABBaseCardView *cardView = self.cards[self.currentIndex-_showCardsNumber+1];
         cardView.center = CGPointMake(self.center.x + self.offsetX*(_showCardsNumber-1) - self.frame.origin.x, self.center.y + self.offsetY*(_showCardsNumber-1) - self.frame.origin.y);
-        cardView.transform = CGAffineTransformMakeScale(1-sizePercent*(_showCardsNumber-1), 1-sizePercent*(_showCardsNumber-1));
+        cardView.transform = CGAffineTransformMakeScale(1-_sizePercent*(_showCardsNumber-1), 1-_sizePercent*(_showCardsNumber-1));
         cardView.alpha = 0;
         [self addSubview:cardView];
         [self insertSubview:cardView belowSubview:self.cards[self.currentIndex-_showCardsNumber+2]];
         
-        tempView = cardView;
+        currentShowingView = cardView;
     }else {
         
         NSInteger index = self.cardCount + (self.currentIndex-_showCardsNumber+1);
         TABBaseCardView *cardView = self.cards[index];
         cardView.center = CGPointMake(self.center.x + self.offsetX*(_showCardsNumber-1) - self.frame.origin.x, self.center.y + self.offsetY*(_showCardsNumber-1) - self.frame.origin.y);
-        cardView.transform = CGAffineTransformMakeScale(1-sizePercent*(_showCardsNumber-1), 1-sizePercent*(_showCardsNumber-1));
+        cardView.transform = CGAffineTransformMakeScale(1-_sizePercent*(_showCardsNumber-1), 1-_sizePercent*(_showCardsNumber-1));
         cardView.alpha = 0;
         [self addSubview:cardView];
-        [self insertSubview:cardView belowSubview:tempView];
+        [self insertSubview:cardView belowSubview:currentShowingView];
         
-        tempView = cardView;
+        currentShowingView = cardView;
     }
     
     if (self.delegate) {
@@ -228,11 +227,11 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
                 // 位置偏移
                 cardView.center = CGPointMake(self.center.x + self.offsetX*(_showCardsNumber-1-i) - self.frame.origin.x, self.center.y + self.offsetY*(_showCardsNumber-1-i) - self.frame.origin.y);
                 // 缩放效果
-                cardView.transform = CGAffineTransformMakeScale(1-sizePercent*(_showCardsNumber-i-1), 1-sizePercent*(_showCardsNumber-i-1));
+                cardView.transform = CGAffineTransformMakeScale(1-_sizePercent*(_showCardsNumber-i-1), 1-_sizePercent*(_showCardsNumber-i-1));
                 cardView.layer.cornerRadius = self.cardCornerRadius;
                 cardView.layer.masksToBounds = YES;
                 cardView.alpha = [self.alphaArray[i] floatValue];
-                cardView.layer.name = tabCardNoDataString;
+                cardView.layer.name = kCardViewNoDataString;
                 
                 [self addSubview:cardView];
             }
@@ -241,7 +240,6 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
         
         if (self.cardCount < _showCardsNumber) {
             
-            NSLog(@"卡片数少于显示数，显示数赋值为卡片数");
             NSInteger removeNum = _showCardsNumber - self.cardCount;
             _showCardsNumber = self.cardCount;
             
@@ -284,14 +282,19 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
         }
         
         TABBaseCardView * otherView = self.cards[index];
-        // 透明度
-        CGFloat alpha = [self.alphaArray[_showCardsNumber - i - 2] floatValue] + ([self.alphaArray[_showCardsNumber - i - 1] floatValue] - [self.alphaArray[_showCardsNumber - i - 2] floatValue])*XOffPercent;
-        otherView.alpha = alpha;
+        
+        if (i != 0) {
+            // 透明度
+            CGFloat alpha = [self.alphaArray[_showCardsNumber - i - 2] floatValue] + ([self.alphaArray[_showCardsNumber - i - 1] floatValue] - [self.alphaArray[_showCardsNumber - i - 2] floatValue])*XOffPercent;
+            otherView.alpha = alpha;
+        }else {
+            otherView.alpha = 1.;
+        }
         // 中心
         CGPoint point = CGPointMake(self.center.x + self.offsetX*(i + 1) - self.offsetX*XOffPercent - self.frame.origin.x, self.center.y + self.offsetY*(i + 1) - self.offsetY*XOffPercent - self.frame.origin.y);
         otherView.center = point;
         // 缩放大小
-        CGFloat scale = 1 - sizePercent * (i + 1) + XOffPercent * sizePercent;
+        CGFloat scale = 1 - _sizePercent * (i + 1) + XOffPercent * _sizePercent;
         otherView.transform = CGAffineTransformMakeScale(scale, scale);
     }
 }
@@ -336,6 +339,14 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
     [self alphaArray];
 }
 
+- (NSInteger)cardCount {
+    if (!self.cards) {
+        return 0;
+    }
+    _cardCount = self.cards.count;
+    return _cardCount;
+}
+
 - (CGFloat)cardCornerRadius {
     if (_cardCornerRadius == 0.0) {
         return 10.0;
@@ -350,17 +361,8 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
     return _offsetX;
 }
 
-- (NSInteger)cardCount {
-    if (!self.cards) {
-        return 0;
-    }
-    _cardCount = self.cards.count;
-    return _cardCount;
-}
-
 - (void)setIsShowNoDataView:(BOOL)isShowNoDataView {
     _isShowNoDataView = isShowNoDataView;
-    
     if (isShowNoDataView) {
         [self addCardViewsToShow];
     }
@@ -368,11 +370,10 @@ static NSString * tabCardNoDataString = @"TABCARDNODATASTRING";
 
 - (void)setNoDataView:(UIView *)noDataView {
     _noDataView = noDataView;
-    
     if (self.isShowNoDataView) {
         for (int i = 0; i < self.subviews.count; i++) {
             UIView *subV = self.subviews[i];
-            if ([subV.layer.name isEqualToString:tabCardNoDataString]) {
+            if ([subV.layer.name isEqualToString:kCardViewNoDataString]) {
                 [subV addSubview:noDataView];
             }
         }

@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		20233DAD21C88AA20077D672 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20233DAC21C88AA20077D672 /* 1.jpg */; };
+		205664CD248895BD00AC16D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 205664CC248895BD00AC16D9 /* LaunchScreen.storyboard */; };
 		2078161A21C73E4C00D3EF63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2078161921C73E4C00D3EF63 /* AppDelegate.m */; };
 		2078161D21C73E4C00D3EF63 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2078161C21C73E4C00D3EF63 /* ViewController.m */; };
 		2078162221C73E4F00D3EF63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2078162121C73E4F00D3EF63 /* Assets.xcassets */; };
 		2078162821C73E4F00D3EF63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2078162721C73E4F00D3EF63 /* main.m */; };
-		2078163221C73E4F00D3EF63 /* TABCardProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2078163121C73E4F00D3EF63 /* TABCardProjectTests.m */; };
-		2078163D21C73E4F00D3EF63 /* TABCardProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2078163C21C73E4F00D3EF63 /* TABCardProjectUITests.m */; };
 		20D4D0F121C7BF5E0062BF07 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D4D0F021C7BF5E0062BF07 /* CardView.m */; };
 		20D4D10A21C884790062BF07 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D4D10121C884780062BF07 /* 4.jpg */; };
 		20D4D10B21C884790062BF07 /* 7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D4D10221C884780062BF07 /* 7.jpg */; };
@@ -26,29 +25,11 @@
 		20D4D11221C884790062BF07 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20D4D10921C884790062BF07 /* 2.jpg */; };
 		20D85F7321C77E15000FA5C2 /* TABCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D85F7221C77E15000FA5C2 /* TABCardView.m */; };
 		20D85F7921C78559000FA5C2 /* TABBaseCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20D85F7821C78559000FA5C2 /* TABBaseCardView.m */; };
-		4316793B710510FEC22B3E9C /* libPods-TABCardProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C4905A7C74270393D00771 /* libPods-TABCardProject.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2078162E21C73E4F00D3EF63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2078160D21C73E4C00D3EF63 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2078161421C73E4C00D3EF63;
-			remoteInfo = TABCardProject;
-		};
-		2078163921C73E4F00D3EF63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2078160D21C73E4C00D3EF63 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2078161421C73E4C00D3EF63;
-			remoteInfo = TABCardProject;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		00C4905A7C74270393D00771 /* libPods-TABCardProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TABCardProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20233DAC21C88AA20077D672 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		205664CC248895BD00AC16D9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2078161521C73E4C00D3EF63 /* TABCardProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TABCardProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2078161821C73E4C00D3EF63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2078161921C73E4C00D3EF63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -57,12 +38,6 @@
 		2078162121C73E4F00D3EF63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2078162621C73E4F00D3EF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2078162721C73E4F00D3EF63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2078162D21C73E4F00D3EF63 /* TABCardProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TABCardProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2078163121C73E4F00D3EF63 /* TABCardProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABCardProjectTests.m; sourceTree = "<group>"; };
-		2078163321C73E4F00D3EF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2078163821C73E4F00D3EF63 /* TABCardProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TABCardProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2078163C21C73E4F00D3EF63 /* TABCardProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABCardProjectUITests.m; sourceTree = "<group>"; };
-		2078163E21C73E4F00D3EF63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2078164A21C745CD00D3EF63 /* TABDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TABDefine.h; sourceTree = "<group>"; };
 		20D4D0EF21C7BF5E0062BF07 /* CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		20D4D0F021C7BF5E0062BF07 /* CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
@@ -79,27 +54,10 @@
 		20D85F7221C77E15000FA5C2 /* TABCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABCardView.m; sourceTree = "<group>"; };
 		20D85F7721C78559000FA5C2 /* TABBaseCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TABBaseCardView.h; sourceTree = "<group>"; };
 		20D85F7821C78559000FA5C2 /* TABBaseCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TABBaseCardView.m; sourceTree = "<group>"; };
-		44E65DBA96917BFFC37A04CC /* Pods-TABCardProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABCardProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TABCardProject/Pods-TABCardProject.release.xcconfig"; sourceTree = "<group>"; };
-		D429F25D834A47ED1D2128B3 /* Pods-TABCardProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TABCardProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TABCardProject/Pods-TABCardProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2078161221C73E4C00D3EF63 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4316793B710510FEC22B3E9C /* libPods-TABCardProject.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2078162A21C73E4F00D3EF63 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2078163521C73E4F00D3EF63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -113,10 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				2078161721C73E4C00D3EF63 /* TABCardProject */,
-				2078163021C73E4F00D3EF63 /* TABCardProjectTests */,
-				2078163B21C73E4F00D3EF63 /* TABCardProjectUITests */,
 				2078161621C73E4C00D3EF63 /* Products */,
-				2B306F63A7BBB160622D8507 /* Pods */,
 				B053679B7E96E46E73F936D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -125,8 +80,6 @@
 			isa = PBXGroup;
 			children = (
 				2078161521C73E4C00D3EF63 /* TABCardProject.app */,
-				2078162D21C73E4F00D3EF63 /* TABCardProjectTests.xctest */,
-				2078163821C73E4F00D3EF63 /* TABCardProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,29 +95,13 @@
 				2078161921C73E4C00D3EF63 /* AppDelegate.m */,
 				2078161B21C73E4C00D3EF63 /* ViewController.h */,
 				2078161C21C73E4C00D3EF63 /* ViewController.m */,
+				2078164A21C745CD00D3EF63 /* TABDefine.h */,
 				2078162121C73E4F00D3EF63 /* Assets.xcassets */,
 				2078162621C73E4F00D3EF63 /* Info.plist */,
 				2078162721C73E4F00D3EF63 /* main.m */,
+				205664CC248895BD00AC16D9 /* LaunchScreen.storyboard */,
 			);
 			path = TABCardProject;
-			sourceTree = "<group>";
-		};
-		2078163021C73E4F00D3EF63 /* TABCardProjectTests */ = {
-			isa = PBXGroup;
-			children = (
-				2078163121C73E4F00D3EF63 /* TABCardProjectTests.m */,
-				2078163321C73E4F00D3EF63 /* Info.plist */,
-			);
-			path = TABCardProjectTests;
-			sourceTree = "<group>";
-		};
-		2078163B21C73E4F00D3EF63 /* TABCardProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2078163C21C73E4F00D3EF63 /* TABCardProjectUITests.m */,
-				2078163E21C73E4F00D3EF63 /* Info.plist */,
-			);
-			path = TABCardProjectUITests;
 			sourceTree = "<group>";
 		};
 		20D4D0F421C881850062BF07 /* Source */ = {
@@ -191,24 +128,13 @@
 				20D85F7821C78559000FA5C2 /* TABBaseCardView.m */,
 				20D85F7121C77E15000FA5C2 /* TABCardView.h */,
 				20D85F7221C77E15000FA5C2 /* TABCardView.m */,
-				2078164A21C745CD00D3EF63 /* TABDefine.h */,
 			);
 			path = TABCardView;
-			sourceTree = "<group>";
-		};
-		2B306F63A7BBB160622D8507 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D429F25D834A47ED1D2128B3 /* Pods-TABCardProject.debug.xcconfig */,
-				44E65DBA96917BFFC37A04CC /* Pods-TABCardProject.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		B053679B7E96E46E73F936D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				00C4905A7C74270393D00771 /* libPods-TABCardProject.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,7 +146,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2078164121C73E4F00D3EF63 /* Build configuration list for PBXNativeTarget "TABCardProject" */;
 			buildPhases = (
-				57751ED044A8AEDA5550457C /* [CP] Check Pods Manifest.lock */,
 				2078161121C73E4C00D3EF63 /* Sources */,
 				2078161221C73E4C00D3EF63 /* Frameworks */,
 				2078161321C73E4C00D3EF63 /* Resources */,
@@ -234,42 +159,6 @@
 			productReference = 2078161521C73E4C00D3EF63 /* TABCardProject.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2078162C21C73E4F00D3EF63 /* TABCardProjectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2078164421C73E4F00D3EF63 /* Build configuration list for PBXNativeTarget "TABCardProjectTests" */;
-			buildPhases = (
-				2078162921C73E4F00D3EF63 /* Sources */,
-				2078162A21C73E4F00D3EF63 /* Frameworks */,
-				2078162B21C73E4F00D3EF63 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2078162F21C73E4F00D3EF63 /* PBXTargetDependency */,
-			);
-			name = TABCardProjectTests;
-			productName = TABCardProjectTests;
-			productReference = 2078162D21C73E4F00D3EF63 /* TABCardProjectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		2078163721C73E4F00D3EF63 /* TABCardProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2078164721C73E4F00D3EF63 /* Build configuration list for PBXNativeTarget "TABCardProjectUITests" */;
-			buildPhases = (
-				2078163421C73E4F00D3EF63 /* Sources */,
-				2078163521C73E4F00D3EF63 /* Frameworks */,
-				2078163621C73E4F00D3EF63 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2078163A21C73E4F00D3EF63 /* PBXTargetDependency */,
-			);
-			name = TABCardProjectUITests;
-			productName = TABCardProjectUITests;
-			productReference = 2078163821C73E4F00D3EF63 /* TABCardProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -281,14 +170,6 @@
 				TargetAttributes = {
 					2078161421C73E4C00D3EF63 = {
 						CreatedOnToolsVersion = 10.0;
-					};
-					2078162C21C73E4F00D3EF63 = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = 2078161421C73E4C00D3EF63;
-					};
-					2078163721C73E4F00D3EF63 = {
-						CreatedOnToolsVersion = 10.0;
-						TestTargetID = 2078161421C73E4C00D3EF63;
 					};
 				};
 			};
@@ -306,8 +187,6 @@
 			projectRoot = "";
 			targets = (
 				2078161421C73E4C00D3EF63 /* TABCardProject */,
-				2078162C21C73E4F00D3EF63 /* TABCardProjectTests */,
-				2078163721C73E4F00D3EF63 /* TABCardProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -323,6 +202,7 @@
 				20D4D10E21C884790062BF07 /* 10.jpg in Resources */,
 				2078162221C73E4F00D3EF63 /* Assets.xcassets in Resources */,
 				20D4D11021C884790062BF07 /* 5.jpg in Resources */,
+				205664CD248895BD00AC16D9 /* LaunchScreen.storyboard in Resources */,
 				20D4D11121C884790062BF07 /* 6.jpg in Resources */,
 				20D4D10F21C884790062BF07 /* 8.jpg in Resources */,
 				20D4D10D21C884790062BF07 /* 3.jpg in Resources */,
@@ -331,46 +211,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2078162B21C73E4F00D3EF63 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2078163621C73E4F00D3EF63 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		57751ED044A8AEDA5550457C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-TABCardProject-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2078161121C73E4C00D3EF63 /* Sources */ = {
@@ -386,36 +227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2078162921C73E4F00D3EF63 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2078163221C73E4F00D3EF63 /* TABCardProjectTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2078163421C73E4F00D3EF63 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2078163D21C73E4F00D3EF63 /* TABCardProjectUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2078162F21C73E4F00D3EF63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2078161421C73E4C00D3EF63 /* TABCardProject */;
-			targetProxy = 2078162E21C73E4F00D3EF63 /* PBXContainerItemProxy */;
-		};
-		2078163A21C73E4F00D3EF63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2078161421C73E4C00D3EF63 /* TABCardProject */;
-			targetProxy = 2078163921C73E4F00D3EF63 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2078163F21C73E4F00D3EF63 /* Debug */ = {
@@ -469,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -522,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -532,17 +344,18 @@
 		};
 		2078164221C73E4F00D3EF63 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D429F25D834A47ED1D2128B3 /* Pods-TABCardProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.0.2;
 				DEVELOPMENT_TEAM = JGZKPAYJ7R;
 				INFOPLIST_FILE = TABCardProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerAndBull.TABCardProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -551,94 +364,21 @@
 		};
 		2078164321C73E4F00D3EF63 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44E65DBA96917BFFC37A04CC /* Pods-TABCardProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.0.2;
 				DEVELOPMENT_TEAM = JGZKPAYJ7R;
 				INFOPLIST_FILE = TABCardProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tigerAndBull.TABCardProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		2078164521C73E4F00D3EF63 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JGZKPAYJ7R;
-				INFOPLIST_FILE = TABCardProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tigerAndBull.TABCardProjectTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TABCardProject.app/TABCardProject";
-			};
-			name = Debug;
-		};
-		2078164621C73E4F00D3EF63 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JGZKPAYJ7R;
-				INFOPLIST_FILE = TABCardProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tigerAndBull.TABCardProjectTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TABCardProject.app/TABCardProject";
-			};
-			name = Release;
-		};
-		2078164821C73E4F00D3EF63 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JGZKPAYJ7R;
-				INFOPLIST_FILE = TABCardProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tigerAndBull.TABCardProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TABCardProject;
-			};
-			name = Debug;
-		};
-		2078164921C73E4F00D3EF63 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JGZKPAYJ7R;
-				INFOPLIST_FILE = TABCardProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.tigerAndBull.TABCardProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TABCardProject;
 			};
 			name = Release;
 		};
@@ -659,24 +399,6 @@
 			buildConfigurations = (
 				2078164221C73E4F00D3EF63 /* Debug */,
 				2078164321C73E4F00D3EF63 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2078164421C73E4F00D3EF63 /* Build configuration list for PBXNativeTarget "TABCardProjectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2078164521C73E4F00D3EF63 /* Debug */,
-				2078164621C73E4F00D3EF63 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2078164721C73E4F00D3EF63 /* Build configuration list for PBXNativeTarget "TABCardProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2078164821C73E4F00D3EF63 /* Debug */,
-				2078164921C73E4F00D3EF63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

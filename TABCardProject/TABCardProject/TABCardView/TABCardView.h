@@ -20,17 +20,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TABCardView : UIView
 
-@property (nonatomic,strong,readonly,nonnull) NSMutableArray <TABBaseCardView *> * cards;   // 卡片内容数组, you can use it to change designed view;
+// 卡片内容数组
+@property (nonatomic, strong, readonly, nonnull) NSMutableArray <TABBaseCardView *> * cards;
+// default is 10.0.
+@property (nonatomic) CGFloat cardCornerRadius;
+// 是否展示无数据占位view
+@property (nonatomic) BOOL isShowNoDataView;
+// 无数据占位图
+@property (nonatomic, strong) UIView * noDataView;
+// 展示卡片的横坐标偏移量
+@property (nonatomic) CGFloat    offsetX;
+// 展示卡片的纵坐标偏移量
+@property (nonatomic) CGFloat    offsetY;
 
-@property (nonatomic) CGFloat cardCornerRadius;                                             // default is 10.0.
-
-@property (nonatomic) BOOL isShowNoDataView;                                                // Showing the view or not, when your data is nil.
-@property (nonatomic,strong) UIView * noDataView;
-
-@property (nonatomic) CGFloat    offsetX;                                                   // 展示卡片的横坐标偏移量
-@property (nonatomic) CGFloat    offsetY;                                                   // 展示卡片的纵坐标偏移量
-
-@property (nonatomic,weak) id<TABCardViewDelegate> delegate;
+@property (nonatomic, weak) id <TABCardViewDelegate> delegate;
 
 /**
  初始化方法
@@ -39,8 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param showCardsNumber 显示的卡片数
  @return TABCardView's object
  */
-- (instancetype)initWithFrame:(CGRect)frame
-              showCardsNumber:(NSInteger)showCardsNumber;
+- (instancetype)initWithFrame:(CGRect)frame showCardsNumber:(NSInteger)showCardsNumber;
 
 - (void)loadCardViewWithData:(NSMutableArray <TABBaseCardView *> *)cards;
 
